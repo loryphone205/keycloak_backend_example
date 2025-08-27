@@ -13,8 +13,7 @@ keycloak_openid = KeycloakOpenID(
 
 class KeycloakUser:
     """
-    A wrapper class for the token dictionary that provides the necessary
-    attributes for Django REST Framework's IsAuthenticated permission class.
+    Una classe wrapper per settare i flag corretti (altrimenti django si arrabbia)
     """
 
     def __init__(self, token_info):
@@ -55,8 +54,8 @@ class KeycloakAuthentication(authentication.BaseAuthentication):
             # We return a tuple of (user, auth). DRF sets request.user to the first
             # element and request.auth to the second. We'll use the token payload for both.
 
+            #creo un "utente" per django e lo ritorno
             user = KeycloakUser(token_info=token_info)
-
 
             return user, token_info
 
