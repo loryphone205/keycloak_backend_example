@@ -1,4 +1,5 @@
 # Keycloak Backend Token Validation Example
+
 This project has the objective to utilize the package `python-keycloak` and `django` to validate JWT Tokens from Keycloak. 
 Keycloak version mismatch doesn't matter as long as it's a small release.
 ---
